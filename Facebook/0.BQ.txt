@@ -1,0 +1,26 @@
+最Challenge的project
+如何处理同事Conflict
+有没有同事或老板给你Critical comments, 之后如何处理
+别人东西Delay怎么办. 鍥磋鎴戜滑@1point 3 acres
+Project一开始没方向该怎么办 鏉ユ簮涓€浜�.涓夊垎鍦拌鍧�.
+有External Obstacle怎么处理
+最有趣的Project
+想去什么组.鐣欏璁哄潧-涓€浜�-涓夊垎鍦�
+为什么想加入FB
+
+
+算法外部分（地里汇总）：
+1. behavior questions.
+你工作最大的failure是啥？.
+你project做的最regretful的决定是啥？
+你做的decision但是证明是错的，你如何接受正确意见的？. from: 1point3acres.com/bbs
+你external obstacle导致project plan失败的例子？
+然后一个coding题：3sum
+1 First, ask some questions about Facebook, do you use Facebook?. 鐗涗汉浜戦泦,涓€浜╀笁鍒嗗湴
+2 Why you like it?
+3 Which part of it should be improved
+4 What challenge you face in your pre project and how you result it?
+5 Why facebook . visit 1point3acres.com for more.
+6 My current project and how I scale our applications.. 1point 3acres 璁哄潧
+7 包括以前的成就，怎么说服别人做design的修改，说服不通怎么办。. Waral 鍗氬鏈夋洿澶氭枃绔�,
+8 FB specifically (vs. other companies). From 1p

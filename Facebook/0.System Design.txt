@@ -1,0 +1,7 @@
+http://www.mitbbs.com/article_t/JobHunting/32777529.html
+https://www.hiredintech.com/system-design/
+
+Type Ahead
+
+Point of Interest (POI) - GeoHash
+http://massivetechinterview.blogspot.com/2015/06/poi-geohash.html
