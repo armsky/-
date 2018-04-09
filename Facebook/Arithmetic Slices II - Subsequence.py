@@ -35,3 +35,23 @@ All arithmetic subsequence slices are:
 [2,4,6,8,10]
 [2,6,10]
 """
+class Solution(object):
+    def numberOfArithmeticSlices(self, A):
+        """
+        :type A: List[int]
+        :rtype: int
+        """
+        if not A or len(A) < 3:
+            return 0
+        # map[i][diff]: count of arithmetic that ends with A[i] and has diff
+        map = [{} for _ in range(len(A))]
+        res = 0
+        for i in range(len(A)):
+            for j in range(i):
+                diff = A[i] - A[j]
+                map_id = map[i].get(diff, 0)
+                map_jd = map[j].get(diff, 0)
+                map_id += map_jd + 1
+                map[i][diff] = map_id
+                res += map_jd
+        return res

@@ -24,3 +24,32 @@ A = [1, 2, 3, 4]
 
 return: 3, for 3 arithmetic slices in A: [1, 2, 3], [2, 3, 4] and [1, 2, 3, 4] itself.
 """
+class Solution(object):
+
+    def numberOfArithmeticSlices(self, A):
+        # dp[i] means how many arithmetic ends with A[i]
+        # if condition is true, means all previous arithmetic ends with A[i-1]
+        # are still arithmetic, and will add a new one ends with A[i]
+        dp = [0, 0]
+        for i in range(2, len(A)):
+            if A[i] - A[i-1] == A[i-1] - A[i-2]:
+                dp.append(dp[i-1] + 1)
+            else:
+                dp.append(0)
+        return sum(dp)
+
+    # A even smarter solution from leetcode
+    def numberOfArithmeticSlices(self, A):
+        """
+        :type A: List[int]
+        :rtype: int
+        """
+        cur = 0
+        res = 0
+        for i in range(2, len(A)):
+            if A[i] - A[i-1] == A[i-1] - A[i-2]:
+                cur += 1
+                res += cur
+            else:
+                cur = 0
+        return res
