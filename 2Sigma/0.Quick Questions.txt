@@ -1,0 +1,98 @@
+difference btwn quick sort and merge sort
+Quick sort
+- in place
+- average O(nlgn), worst O(n^2).
+
+Merge sort
+- average and worst O(nlgn)
+- extra space O(n)
+===========================
+how hash table Implemented, 如何解决冲突
+- hash function: use prime number as bucket number
+- Collision?
+  1) Separate Chaining
+Advantages:
+1) Simple to implement.
+2) Hash table never fills up, we can always add more elements to chain.
+3) Less sensitive to the hash function or load factors.
+4) It is mostly used when it is unknown how many and how frequently keys may be inserted or deleted.
+
+Disadvantages:
+1) Cache performance of chaining is not good as keys are stored using linked list. Open addressing provides better cache performance as everything is stored in same table.
+2) Wastage of Space (Some Parts of hash table are never used)
+3) If the chain becomes long, then search time can become O(n) in worst case.
+4) Uses extra space for links.
+
+  2) Open Addressing
+Advantages of Open Addressing
+  1) Open addressing provides better cache performance as everything is stored in same table.
+  2) a slot can be used even if an input doesn’t map to it.
+  3) Chaining uses extra space for links.
+  4) Can't simply delete a key which will make searching fail, should mark as 'deleted'
+
+- Someone implement hash table and it is slow, why
+  1. poor hash function
+  2. bad open addressing strategy
+
+- Use hash table to store data, but there is much more data than the machine's
+  RAM, how to deal with that? 
+  add one more machine, rehash and reconstruct the hash table.
+
+===========================
+Process vs Threads
+
+In computing, a process is an instance of a computer program that is being executed.
+It contains the program code and its current activity. Depending on the operating system (OS), a process may be made up of multiple threads of execution that execute instructions concurrently.. 
+
+A thread of execution is the smallest sequence of programmed instructions that can be
+managed independently by a scheduler, which is typically a part of the operating system.
+
+Each process provides the resources needed to execute a program. A process has a virtual address space, executable code, open handles to system objects, a security context, a unique process identifier, environment variables, a priority class, minimum and maximum working set sizes, and at least one thread of execution. Each process is started with a single thread, often called the primary thread, but can create additional threads from any of its threads.
+A thread is the entity within a process that can be scheduled for execution. All threads of a process share its virtual address space and system resources. In addition, each thread maintains exception handlers, a scheduling priority, thread local storage, a unique thread identifier, and a set of structures the system will use to save the thread context until it is scheduled.
+
+Typical difference is, processes run in separated memory while threads run in shared memory.
+processes are typically independent, while threads exist as subsets of a process
+processes carry considerably more state information than threads, whereas multiple threads within a process share process state as well as memory and other resources
+processes have separate address spaces, whereas threads share their address space
+processes interact only through system-provided inter-process communication mechanisms
+context switching between threads in the same process is typically faster than context switching between processes.
+
+Inter-Process Communication:
+1. file
+2. Message queue
+3. shared memory
+
+Inter-Thread Communications
+1.Synchronization, like locks
+2. shared memory
+
+Each thread has a private stack, which it can quickly add and remove items from. This makes stack based memory fast, but if you use too much stack memory, as occurs in infinite recursion, you will get a stack overflow.
+
+All threads share a common heap. Since all threads share the same heap, access to the allocator/deallocator must be synchronized. There are various methods and libraries for avoiding allocator contention.
+===========================
+Latency vs Throughput
+
+Latency is the amount of time to finish an operation. Latency is the delay from input into a system to desired outcome.
+Throughput is the amount of work we finished in a unit time.
+
+===========================
+MVC Design Pattern. 鍥磋鎴戜滑@1point 3 acres
+
+MVC is a design pattern for implementing user interface. It consists of three parts, Model, View and Controller, where each one of them is called components and has their own functionality..鏈枃鍘熷垱鑷�1point3acres璁哄潧
+
+Model manages all the data and logic of a software. It is the core component.. 鐣欏鐢宠璁哄潧-涓€浜╀笁鍒嗗湴
+View is an interface responsible for taking all information from model and representing them to user.
+Controller takes all commands from users sends them to model.
+
+In this way, a software is loosely coupled and well organized into modules. We can very easily add new functions and features to it. And it is also very easy to maintain.
+
+What other design patterns have you used?
+
+(Creational)-google 1point3acres
+Singleton -> Object Pool
+Singleton is a design pattern where you allow only one instance of a class. In some cases, like its private variables don’t change, singleton is useful.
+
+Later, to extend this we could use object pool where we allow multiple instances of a class. This could be useful when we need a couple of object at the same time while it’s expensive to create them. A good example would be service connections. We can use two hash tables to implement this. One for available objects and one for unavailable objects.. from: 1point3acres.com/bbs
+
+Factory -> Abstract Factory
+Factory is a design pattern that allows us to dynamically specify an object’s class without calling constructor..1point3acres缃�
